@@ -1,4 +1,4 @@
-# Sambu - The KANA Labs Trading Assistant
+# Sambu - Web3 Trading Assistant
 
 Sambu is an advanced, conversational trading assistant designed for the KANA Labs perpetual trading platform on the APTOS blockchain. It operates as a Telegram bot, leveraging the power of Google's Gemini Pro model to provide a seamless and interactive trading experience.
 
