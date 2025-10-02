@@ -1,3 +1,4 @@
 ./SambuEnv
 ./__pycache__
 ./SambuTools/__pycache__
+./SambuAgent/__pycache__
