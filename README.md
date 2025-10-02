@@ -1,7 +1,3 @@
-## SAMBU
-
-generate a readme file
-
 # Sambu - The KANA Labs Trading Assistant
 
 Sambu is an advanced, conversational trading assistant designed for the KANA Labs perpetual trading platform on the APTOS blockchain. It operates as a Telegram bot, leveraging the power of Google's Gemini Pro model to provide a seamless and interactive trading experience.
@@ -83,7 +79,16 @@ Follow these steps to set up and run your own instance of the Sambu bot.
 2. Add your Telegram bot token to the `.env` file:
 
     ```
+    KANA_API_KEY=Byd1IAXsV2ZvJFSEft49AeFDeZjsUNJ6Hf8GxvG1Snj5QpeO
+
+    KANA_BASE_URL=<https://perps-tradeapi.kanalabs.io>
+    APTOS_BASE_URL=<https://api.testnet.aptoslabs.com/v1>
+    WALLET_ADDRESS="YOUR WALLET ADDRESS HERE"
+    PRIVATE_KEY="YOUR PRIVATE KEY HERE"
+    GOOGLE_GENAI_USE_VERTEXAI=FALSE
+    GOOGLE_API_KEY="YOUR GOOGLE API KEY HERE (FROM GOOGLE AI STUDIO)"
     SAMBUBOT_TOKEN="YOUR_TELEGRAM_BOT_TOKEN_HERE"
+
     ```
 
 3. You may also need to add other API keys or private keys for interacting with the Aptos network, depending on the implementation of the functions in `SambuAgent/SambuTools/`.
@@ -97,6 +102,11 @@ python SambuBot.py
 ```
 
 Once running, open Telegram and start a conversation with your bot by sending the `/start` command.
+Use `/cancel` to stop the conversation.
+
+### Using Google ADK Web
+
+Run `adk web` from parent folder then open your browser with `http://localhost:8000` as URL
 
 ## 📂 Project Structure
 

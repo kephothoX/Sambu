@@ -1,0 +1,4 @@
+google-adk
+aptos-sdk
+python-telegram-bot
+telegram
