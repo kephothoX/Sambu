@@ -79,7 +79,7 @@ Follow these steps to set up and run your own instance of the Sambu bot.
 2. Add your Telegram bot token to the `.env` file:
 
     ```
-    KANA_API_KEY=Byd1IAXsV2ZvJFSEft49AeFDeZjsUNJ6Hf8GxvG1Snj5QpeO
+    KANA_API_KEY=YOUR KANA API KEY HERE
 
     KANA_BASE_URL=<https://perps-tradeapi.kanalabs.io>
     APTOS_BASE_URL=<https://api.testnet.aptoslabs.com/v1>
