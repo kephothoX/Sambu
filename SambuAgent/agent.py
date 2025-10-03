@@ -4,9 +4,8 @@ import dotenv
 
 dotenv.load_dotenv("../.env")
 
-from google.adk.agents import LlmAgent
-from google.adk.tools.agent_tool import AgentTool
-from google.adk.tools import LongRunningFunctionTool
+from google.adk.agents import Agent
+from google.adk.tools import LongRunningFunctionTool, google_search
 
 
 from SambuAgent.SambuTools.deposit import deposit
@@ -28,6 +27,7 @@ from SambuAgent.SambuTools.sambuAPI import (
     signAndSendTransaction,
     fundAccount,
     getAccountBalance,
+    getChainIdsAndData,
 )
 
 
@@ -67,7 +67,7 @@ warnings.filterwarnings("ignore")
 logging.basicConfig(level=logging.ERROR)
 
 
-root_agent = LlmAgent(
+root_agent = Agent(
     name="Sambu_Agent",
     model=MODEL,
     description="""You are an advanced trading assistant specialized in KANA Labs perpetual trading on the APTOS blockchain. You help users manage their trading activities, portfolio, and execute various trading operations.""",
@@ -86,6 +86,9 @@ root_agent = LlmAgent(
         - Sign and send Transactions
         - Fund Accounts
         - Get Account Balance
+
+        Chain IDs for Market Analysis
+        - Retrieve Chain IDs for market analysis.
 
 
         Market Analysis:
@@ -137,6 +140,7 @@ root_agent = LlmAgent(
         How can I assist you with your KANA Labs perpetual trading today?
     """,
     tools=[
+        # google_search,
         LongRunningFunctionTool(func=deposit),
         LongRunningFunctionTool(func=fetchMarketInfo),
         LongRunningFunctionTool(func=perpMarketInfo),
@@ -166,5 +170,6 @@ root_agent = LlmAgent(
         LongRunningFunctionTool(func=signAndSendTransaction),
         LongRunningFunctionTool(func=fundAccount),
         LongRunningFunctionTool(func=getAccountBalance),
+        LongRunningFunctionTool(func=getChainIdsAndData),
     ],
 )

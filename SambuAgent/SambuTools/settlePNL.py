@@ -128,4 +128,4 @@ async def settlePNL(private_key: str, wallet_address: str, market_id: int) -> di
         print(f"Transaction submitted successfully. Transaction hash: {txn_hash}")
 
     except Exception as e:
-        print(f"Error during transaction process: {e}")
+        return {"Error during transaction process": e}

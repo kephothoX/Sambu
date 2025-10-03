@@ -1,4 +1,5 @@
-import requests, os
+import requests, os, json
+from pathlib import Path
 
 from aptos_sdk.account import Account
 
@@ -27,6 +28,20 @@ FAUCET_URL = "https://faucet.devnet.aptoslabs.com"
 
 rest_client = RestClient(NODE_URL)
 faucet_client = FaucetClient(FAUCET_URL, rest_client)
+
+
+def getChainIdsAndData() -> dict:
+    try:
+        ChainIDs = list()
+        with open(Path(__file__).parent.joinpath("chains_mini.json"), "r") as file:
+            data = json.load(file)
+
+        repsonse = {"ChainIds": ChainIDs, "Chains Data": data}
+
+        return {"Chains IDs and Data": repsonse}
+
+    except Exception as e:
+        return {"Error during transaction process": e}
 
 
 def generateNewAPTOsAccount() -> dict:

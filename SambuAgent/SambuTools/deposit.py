@@ -127,5 +127,5 @@ async def deposit(amount: int, user_address: str) -> dict:
         return {"Result": txn_hash}
 
     except Exception as e:
-        print(f"Error during transaction process: {e}")
+        return {"Error during transaction process": e}
         return {"Error": str(e)}
